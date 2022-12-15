@@ -1,2 +1,2 @@
 # exodia-DWM
-DWM for Exodia OS
+DWM for Exodia OS, coming soon...
