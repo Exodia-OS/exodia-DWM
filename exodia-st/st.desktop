@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Version=0.8.4
+Name=Exodia st
+Comment=A simple virtual terminal emulator for X.
+Exec=/usr/bin/st
+Icon=
+Terminal=false
+Categories=System;TerminalEmulator

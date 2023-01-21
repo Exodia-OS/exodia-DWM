@@ -20,11 +20,15 @@ source=(
 	"st-mouse-scroll_1.patch"
 	"st-mouse-scroll_2.patch"
 	"st-mouse-scroll_3.patch"
+  "st.desktop"
+  "st.png"
   
   )
 
 sha256sums=(
   
+  'SKIP'
+  'SKIP'
   'SKIP'
   'SKIP'
   'SKIP'
@@ -68,5 +72,10 @@ package() {
   install $installopts "$licdir" "$_sourcedir/LICENSE"
   install $installopts "$docdir" "$_sourcedir/README"
   install $installopts "$shrdir/st" "$_sourcedir/st.info"
+
+  install -m644 -D ${srcdir}/st.desktop ${pkgdir}/usr/share/applications/st.desktop
+
+  mkdir -p ${pkgdir}/usr/share/pixmaps
+  cp ${srcdir}/st.png ${pkgdir}/usr/share/pixmaps/
   
 }
