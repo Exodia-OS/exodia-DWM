@@ -1,0 +1,72 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-st
+pkgver=0.8.4
+pkgrel=1
+pkgdesc='A simple virtual terminal emulator for X.'
+arch=('any')
+license=('MIT')
+depends=('libxft')
+conflicts=('st')
+url="https://st.suckless.org"
+
+source=(
+
+  "https://dl.suckless.org/st/st-$pkgver.tar.gz"
+	"anysize.patch"
+	"st-boxdraw.patch"
+	"st-mouse-scroll_1.patch"
+	"st-mouse-scroll_2.patch"
+	"st-mouse-scroll_3.patch"
+  
+  )
+
+sha256sums=(
+  
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  
+  )
+
+_sourcedir=st-$pkgver
+_makeopts="--directory=$_sourcedir"
+
+prepare() {
+
+	if [[ -e "$BUILDDIR/config.h" ]]; then
+		cp "$BUILDDIR/config.h" "$_sourcedir"
+	fi
+
+	cd "$srcdir/st-$pkgver"
+	patch --forward --strip=1 --input="${srcdir}/anysize.patch"
+	patch --forward --strip=1 --input="${srcdir}/st-boxdraw.patch"
+	patch --forward --strip=1 --input="${srcdir}/st-mouse-scroll_1.patch"
+	patch --forward --strip=1 --input="${srcdir}/st-mouse-scroll_2.patch"
+	patch --forward --strip=1 --input="${srcdir}/st-mouse-scroll_3.patch"
+
+}
+
+build() {
+
+  make $_makeopts X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+
+}
+
+package() {
+
+  local installopts='--mode 0644 -D --target-directory'
+  local shrdir="$pkgdir/usr/share"
+  local licdir="$shrdir/licenses/st"
+  local docdir="$shrdir/doc/st"
+  make $_makeopts PREFIX=/usr DESTDIR="$pkgdir" install
+  install $installopts "$licdir" "$_sourcedir/LICENSE"
+  install $installopts "$docdir" "$_sourcedir/README"
+  install $installopts "$shrdir/st" "$_sourcedir/st.info"
+  
+}
