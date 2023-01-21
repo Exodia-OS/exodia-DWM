@@ -5,6 +5,6 @@ Version=0.8.4
 Name=Exodia st
 Comment=A simple virtual terminal emulator for X.
 Exec=/usr/bin/st
-Icon=
+Icon=/usr/share/pixmaps/st.png
 Terminal=false
 Categories=System;TerminalEmulator

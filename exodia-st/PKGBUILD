@@ -4,7 +4,7 @@
 
 pkgname=exodia-st
 pkgver=0.8.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('any')
 license=('MIT')
