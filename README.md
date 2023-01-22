@@ -17,4 +17,6 @@ sudo pacman -U exodia-dwm-beta-1.0-5-any.pkg.tar.zst
 |--|--|
 | ![](imgs/1.png) | ![](imgs/2.png) |
 
+![](imgs/exodia-dwm.gif)
+
 <!-- showcase -->
