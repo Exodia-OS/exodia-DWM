@@ -26,7 +26,7 @@ MSG() {
 	echo -e ${Green}"\n[*] DWM is ${1}. Make sure your system locale is in ${BRed}UTF-8 format${Green}, ${BRed}Otherwise you won't be able to login into DWM." ${RESET_COLOR}
 	echo -e ${Blue}"\n[+] To display the currently set locale, run ${BYellow}'locale'${Blue}." ${RESET_COLOR}
 	echo -e ${Blue}"[+] To set new system locale (ex: en_US.UTF-8), run ${BYellow}'sudo localectl set-locale LANG=en_US.UTF-8'${Blue} and reboot the computer." ${RESET_COLOR}
-	echo -e ${Purple}"\n[+] Source Code of this DWM is available in : ${BCyan}/opt/exodia/dwm\n"	${RESET_COLOR}
+	echo -e ${Purple}"\n[+] Source Code of this DWM is available in : ${BCyan}/opt/exodia/dwm"	${RESET_COLOR}
 	echo -e ${BGreen}"\n[✔] D O N E!\n"	${RESET_COLOR}
 
 }
