@@ -21,6 +21,9 @@ xfce4-power-manager &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
+# setup dual monitors #
+# /usr/share/exodia/dwm/bin/DWM_MONITORS.sh
+
 # Restore wallpaper
 hsetroot -cover /usr/share/backgrounds/waves_right_colored.png
 

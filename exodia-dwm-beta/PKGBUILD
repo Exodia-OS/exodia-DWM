@@ -5,7 +5,7 @@
 pkgname=exodia-dwm-beta
 _pkgname=exodia-dwm
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="DWM for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-DWM"
 arch=('any')

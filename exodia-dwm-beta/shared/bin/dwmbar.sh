@@ -56,7 +56,7 @@ GitHub_Notifications() {
 }
 
 
-## Wi-fi
+# Wi-fi #
 wlan() {
 
 	ssid=$(iwgetid -r)
@@ -67,7 +67,7 @@ wlan() {
 
 }
 
-## Time
+# Time #
 clock() {
 
 	printf "^c$black^ ^b$darkblue^ 󱑆 "
@@ -75,24 +75,22 @@ clock() {
 
 }
 
-## System Update
+# System Update #
 updates() {
 
-	updates=$(checkupdates 2>/dev/null | wc -l)
-
-	if [ -z "$updates" ]; then
+	if ! updates=$(checkupdates 2> /dev/null | wc -l ); then
+		updates=0
+    fi
 	
-		printf "  ^c$green^    Fully Updated"
-	
+	if [ "$updates" -gt 0 ]; then
+		printf " ^c$green^ $updates"
 	else
-    	
-		printf "  ^c$green^    $updates"" updates"
-		
+    	printf " ^c$green^ 0"
 	fi
 
 }
 
-## Battery Info
+# Battery Info #
 battery() {
 
 	BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
@@ -134,7 +132,7 @@ battery() {
 
 }
 
-## Brightness
+# Brightness #
 brightness() {
 
 	LIGHT=$(printf "%.0f\n" `light -G`)
@@ -151,10 +149,11 @@ brightness() {
 
 }
 
-## Main
+# Main #
 while true; do
   [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] && updates=$(updates)
   interval=$((interval + 1))
 
   sleep 1 && xsetroot -name "$(battery) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
+
 done
