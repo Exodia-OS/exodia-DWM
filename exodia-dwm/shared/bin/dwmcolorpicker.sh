@@ -1,18 +1,32 @@
 #!/usr/bin/env bash
 
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS        #
+#                                   #
+#####################################
+
 color=$(xcolor --format hex --preview-size 255 --scale 10)
 image=/tmp/${color}.png
 
 main() {
-	if [[ "$color" ]]; then
-		# copy color code to clipboard
-		echo $color | tr -d "\n" | xclip -selection clipboard
-		# generate preview
-		convert -size 48x48 xc:"$color" ${image}
-		# notify about it
-		dunstify -u low -h string:x-dunst-stack-tag:obcolorpicker -i ${image} "$color, copied to clipboard."
+	if [[ "$color" ]];
+		
+		then
+			
+			# copy color code to clipboard
+			echo $color | tr -d "\n" | xclip -selection clipboard
+			# generate preview
+			convert -size 48x48 xc:"$color" ${image}
+			# notify about it
+			dunstify -u low -h string:x-dunst-stack-tag:obcolorpicker -i ${image} "$color, copied to clipboard."
+
 	fi
+
 }
 
-# run the script
+# run the script #
 main

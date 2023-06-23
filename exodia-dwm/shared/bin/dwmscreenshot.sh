@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-## Script to take screenshots on Exodia OS.
+## Script to take screenshots on Exodia OS. ##
 
 # file
 time=`date +%Y-%m-%d-%H-%M-%S`
@@ -10,8 +10,12 @@ dir="`xdg-user-dir PICTURES`/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 # directory
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
+if [[ ! -d "$dir" ]];
+	
+	then
+		
+		mkdir -p "$dir"
+		
 fi
 
 # notify and view screenshot

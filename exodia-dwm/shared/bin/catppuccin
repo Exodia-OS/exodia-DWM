@@ -1,5 +1,14 @@
 #!/bin/dash
 
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS        #
+#                                   #
+#####################################
+
 # colors #
 
 black=#1E1D2D
@@ -12,6 +21,7 @@ darkblue=#83bae8
 cyan=#56B6C2
 purple=#B900F7
 pink=#F72D93
+FG=#b699e9
 
 BGL=#2c3038
 background=#1A1B26

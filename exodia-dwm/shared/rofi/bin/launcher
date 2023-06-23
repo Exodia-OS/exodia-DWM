@@ -4,7 +4,7 @@ DIR="/usr/share/exodia/dwm"
 
 rofi \
 	-show drun \
-	-modi drun,run \
+	-modi run,drun,ssh,filebrowser,window \
 	-no-lazy-grab \
 	-scroll-method 0 \
 	-drun-match-fields all \

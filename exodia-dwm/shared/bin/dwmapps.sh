@@ -1,11 +1,32 @@
 #!/usr/bin/env bash
 
-## Launch Applications
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS        #
+#                                   #
+#####################################
 
-if [[ "$1" == "--file" ]]; then
-	thunar
-elif [[ "$1" == "--editor" ]]; then
-	geany
-elif [[ "$1" == "--web" ]]; then
-	firefox
+## Launch Applications ##
+
+if [[ "$1" == "--file" ]];
+	
+	then
+		
+		thunar
+
+elif [[ "$1" == "--editor" ]];
+	
+	then
+		
+		geany
+
+elif [[ "$1" == "--web" ]];
+	
+	then
+		
+		google-chrome-stable
+		
 fi

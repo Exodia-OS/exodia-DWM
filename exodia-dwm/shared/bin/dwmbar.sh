@@ -1,29 +1,20 @@
 #!/usr/bin/bash
 
-##########################################################################################################
-#																										 
-#    Copyright © 2022 To Cyb3rTh1eveZ																	 
-#																										 
-#     ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ ████████╗██╗  ██╗ ██╗███████╗██╗   ██╗███████╗███████╗	 
-#    ██╔════╝╚██╗ ██╔╝██╔══██╗╚════██╗██╔══██╗╚══██╔══╝██║  ██║███║██╔════╝██║   ██║██╔════╝╚══███╔╝     
-#    ██║      ╚████╔╝ ██████╔╝ █████╔╝██████╔╝   ██║   ███████║╚██║█████╗  ██║   ██║█████╗    ███╔╝      
-#    ██║       ╚██╔╝  ██╔══██╗ ╚═══██╗██╔══██╗   ██║   ██╔══██║ ██║██╔══╝  ╚██╗ ██╔╝██╔══╝   ███╔╝       
-#    ╚██████╗   ██║   ██████╔╝██████╔╝██║  ██║   ██║   ██║  ██║ ██║███████╗ ╚████╔╝ ███████╗███████╗     
-#     ╚═════╝   ╚═╝   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝     
-#																										 
-#																										 
-#																										 
-#    Copyright (C) Mahmoud Mohamed (00xWolf)  <https://github.com/mmsaeed509>								 
-#    LICENSE © GNU-GPL3																					 
-#																										 
-##########################################################################################################
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS        #
+#                                   #
+#####################################
 
 # ^c$var^ = fg color
 # ^b$var^ = bg color
 
 interval=0
 
-# load colors
+# load colors #
 . /usr/share/exodia/dwm/bin/catppuccin
 
 # Weather #
@@ -395,19 +386,41 @@ audio_volume() {
 
 }
 
-# Main #
-while true; do
-  [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] && updates=$(updates)
-  interval=$((interval + 1))
+pulse-mic() {
+  
+  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
-  sleep 1 && xsetroot -name "$(battery) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
+  if [ "$MUTED" = "yes" ];
+      
+      then
+          
+		  printf "^c$red^  muted"
+
+  else
+      
+	  STATUS=$(printf "%.0f\n" `amixer sget Capture | awk -F'[][]' '/%/ {print $2; exit}' | tr -d '%'`)
+	  printf "^c$FG^  $STATUS%%"
+
+  fi
+
+}
+
+# Launch Bar #
+while true;
+	
+	do
+		
+		sleep 1 && xsetroot -name "$(battery) $(updates) $(weather) $(pulse-mic) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
 
 done
 
-# while true;
-	
-# 	do
-		
-# 		sleep 1 && xsetroot -name "$(battery) $(updates) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
+# -- #
+
+# Main #
+# while true; do
+#   [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] && updates=$(updates)
+#   interval=$((interval + 1))
+
+#   sleep 1 && xsetroot -name "$(battery) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
 
 # done
