@@ -266,7 +266,7 @@ GitHub_Notifications() {
 
 
 # Wi-fi #
-wlan() 
+wlan(){
 
 	ssid=$(iwgetid -r)
 
@@ -284,6 +284,7 @@ wlan()
 	esac
 
 
+}
 
 # Time #
 clock() {

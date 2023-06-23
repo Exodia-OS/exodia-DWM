@@ -75,7 +75,7 @@ BUILD_PKG () {
     # cleaning building #
     echo -e "\n${BRed}[+] cleaning building files...${RESET_COLOR}"
     cd ..
-    # rm -rf ${BUILDING_DIR}
+    rm -rf ${BUILDING_DIR}
     sleep 0.5
 
     # D O N E! #

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-DIR="/usr/share/exodia/dwm"
-
-rofi -no-lazy-grab -show window -theme $DIR/rofi/themes/window.rasi
