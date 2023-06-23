@@ -396,18 +396,18 @@ audio_volume() {
 }
 
 # Main #
-# while true; do
-#   [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] && updates=$(updates)
-#   interval=$((interval + 1))
+while true; do
+  [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] && updates=$(updates)
+  interval=$((interval + 1))
 
-#   sleep 1 && xsetroot -name "$(battery) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
-
-# done
-
-while true;
-	
-	do
-		
-		sleep 1 && xsetroot -name "$(battery) $(updates) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
+  sleep 1 && xsetroot -name "$(battery) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
 
 done
+
+# while true;
+	
+# 	do
+		
+# 		sleep 1 && xsetroot -name "$(battery) $(updates) $(weather) $(audio_volume) $(brightness) $(GitHub_Notifications) $(cpu_info) $(memory) $(wlan) $(clock)"
+
+# done
