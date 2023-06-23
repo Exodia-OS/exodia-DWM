@@ -1,0 +1,16 @@
+#!/bin/dash
+
+# colors #
+
+black=#1E1D2D
+green=#ABE9B3
+white=#D9E0EE
+grey=#282737
+blue=#96CDFB
+red=#F28FAD
+darkblue=#83bae8
+cyan=#56B6C2
+
+BGL=#2c3038
+background=#1A1B26
+foreground=#D4BFFF

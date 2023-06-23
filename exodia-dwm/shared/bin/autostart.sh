@@ -41,23 +41,17 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # No. monitors #
 NUM_OF_MONITORS=$(xrandr --listmonitors | grep -c "^ ")
 
-if [[ ${NUM_OF_MONITORS} -ge 1 ]]; 
+if [[ ${NUM_OF_MONITORS} -ge 1 ]];
 	then
     	dwmmonitors
 fi
 
-# set Keyboard RGB #
-
-~/.config/bspwm/bin/facer_rgb.py -m 0 -z 1 -cR 175 -cB 255 -cG 0 -b 100
-sleep 0.3
-~/.config/bspwm/bin/facer_rgb.py -m 0 -z 2 -cR 175 -cB 255 -cG 0 -b 100
-sleep 0.3
-~/.config/bspwm/bin/facer_rgb.py -m 0 -z 3 -cR 175 -cB 255 -cG 0 -b 100
-sleep 0.3
-~/.config/bspwm/bin/facer_rgb.py -m 0 -z 4 -cR 175 -cB 255 -cG 0 -b 100
+# set keyboard Layouts #
+setxkbmap -layout $(grep -oP 'keyboard-layouts = \K.*' "${DWM_DIR}/exodia.conf")
+setxkbmap -option 'grp:alt_shift_toggle'
 
 # Restore wallpaper #
-hsetroot -cover /usr/share/backgrounds/waves_right_colored.png
+hsetroot -cover $(grep -oP 'background = \K.*' "${DWM_DIR}/exodia.conf")
 
 # Lauch dwmbar #
 dwmbar.sh &
