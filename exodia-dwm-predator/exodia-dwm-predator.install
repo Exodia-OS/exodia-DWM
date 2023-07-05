@@ -21,6 +21,52 @@ UBlue='\033[4;34m'  UPurple='\033[4;35m' UCyan='\033[4;36m'  UWhite='\033[4;37m'
 On_Black='\033[40m' On_Red='\033[41m'    On_Green='\033[42m' On_Yellow='\033[43m'
 On_Blue='\033[44m'  On_Purple='\033[45m' On_Cyan='\033[46m'  On_White='\033[47m'
 
+CONFIG_DIR="/usr/share/exodia/dwm"
+
+RESTORE_USER_CONFIG_STATUS=$(grep -Po 'restore-user-config\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+CURRENT_BACKGROUND=$(grep -Po 'background\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_THEME=$(grep -Po 'theme\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_ICONS=$(grep -Po 'icons\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_CURSOR=$(grep -Po 'cursor\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+CURRENT_PICOM=$(grep -Po 'picom\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_KEYBOARD_LAYOUTS=$(grep -Po 'keyboard-layouts\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+CURRENT_RGB_KEYBOARD=$(grep -Po 'RGB-keyboard\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+CURRENT_GITHUB_USERNAME=$(grep -Po 'github-username\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_GITHUB_ACCESS_TOKEN=$(grep -Po 'github-access-token\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_WEATHER_API_KEY=$(grep -Po 'weather-API\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_WEATHER_CITY_ID=$(grep -Po 'weather-city-ID\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+CURRENT_RESTORE_USER_CONFIG=$(grep -Po 'restore-user-config\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+CURRENT_AUTO_START_ASSISTANT_STATUS=$(grep -Po 'exodia-assistant-auto-start\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
+
+RESTORE_USER_CONFIG (){
+
+	echo -e ${BBlue}"   ==> ${BPurple}restore user config for ${BCyan}exodia.conf ${BPurple}." ${RESET_COLOR}
+
+	sed -i "s#background = .*#background = ${CURRENT_BACKGROUND}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#theme = .*#theme = ${CURRENT_THEME}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#icons = .*#icons = ${CURRENT_ICONS}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#cursor = .*#cursor = ${CURRENT_CURSOR}#" ${CONFIG_DIR}/exodia.conf
+
+	sed -i "s#picom = .*#picom = ${CURRENT_PICOM}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#keyboard-layouts = .*#keyboard-layouts = ${CURRENT_KEYBOARD_LAYOUTS}#" ${CONFIG_DIR}/exodia.conf
+	
+	sed -i "s#RGB-keyboard = .*#RGB-keyboard = ${CURRENT_RGB_KEYBOARD}#" ${CONFIG_DIR}/exodia.conf
+	
+	
+	sed -i "s#github-username = .*#github-username = ${CURRENT_GITHUB_USERNAME}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#github-access-token = .*#github-access-token = ${CURRENT_GITHUB_ACCESS_TOKEN}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#weather-API = .*#weather-API = ${CURRENT_WEATHER_API_KEY}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#weather-city-ID = .*#weather-city-ID = ${CURRENT_WEATHER_CITY_ID}#" ${CONFIG_DIR}/exodia.conf
+	
+	sed -i "s#restore-user-config = .*#restore-user-config = ${CURRENT_RESTORE_USER_CONFIG}#" ${CONFIG_DIR}/exodia.conf
+	sed -i "s#exodia-assistant-auto-start = .*#exodia-assistant-auto-start = ${CURRENT_AUTO_START_ASSISTANT_STATUS}#" ${CONFIG_DIR}/exodia.conf
+
+}
 
 MSG() {
 
@@ -34,11 +80,27 @@ MSG() {
 
 post_install() {
 
+	if [[ ${RESTORE_USER_CONFIG_STATUS} == "true" ]];
+
+		then
+
+			RESTORE_USER_CONFIG
+		
+	fi
+
 	MSG 'installed'
 
 }
 
 post_upgrade() {
+
+	if [[ ${RESTORE_USER_CONFIG_STATUS} == "true" ]];
+
+		then
+
+			RESTORE_USER_CONFIG
+		
+	fi
 
 	MSG 'updated'
 
