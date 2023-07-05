@@ -10,7 +10,6 @@ url="https://github.com/Exodia-OS/exodia-DWM"
 arch=('any')
 license=('GPL3')
 options=('zipman')
-conflicts=('exodia-dwm')
 depends=(
   
   'libx11' 'libxinerama' 'libxft' 'freetype2' 

@@ -43,31 +43,6 @@ CURRENT_WEATHER_CITY_ID=$(grep -Po 'weather-city-ID\s*=\s*\K.*' ${CONFIG_DIR}/ex
 CURRENT_RESTORE_USER_CONFIG=$(grep -Po 'restore-user-config\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
 CURRENT_AUTO_START_ASSISTANT_STATUS=$(grep -Po 'exodia-assistant-auto-start\s*=\s*\K.*' ${CONFIG_DIR}/exodia.conf)
 
-RESTORE_USER_CONFIG (){
-
-	echo -e ${BBlue}"   ==> ${BPurple}restore user config for ${BCyan}exodia.conf ${BPurple}." ${RESET_COLOR}
-
-	sed -i "s#background = .*#background = ${CURRENT_BACKGROUND}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#theme = .*#theme = ${CURRENT_THEME}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#icons = .*#icons = ${CURRENT_ICONS}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#cursor = .*#cursor = ${CURRENT_CURSOR}#" ${CONFIG_DIR}/exodia.conf
-
-	sed -i "s#picom = .*#picom = ${CURRENT_PICOM}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#keyboard-layouts = .*#keyboard-layouts = ${CURRENT_KEYBOARD_LAYOUTS}#" ${CONFIG_DIR}/exodia.conf
-	
-	sed -i "s#RGB-keyboard = .*#RGB-keyboard = ${CURRENT_RGB_KEYBOARD}#" ${CONFIG_DIR}/exodia.conf
-	
-	
-	sed -i "s#github-username = .*#github-username = ${CURRENT_GITHUB_USERNAME}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#github-access-token = .*#github-access-token = ${CURRENT_GITHUB_ACCESS_TOKEN}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#weather-API = .*#weather-API = ${CURRENT_WEATHER_API_KEY}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#weather-city-ID = .*#weather-city-ID = ${CURRENT_WEATHER_CITY_ID}#" ${CONFIG_DIR}/exodia.conf
-	
-	sed -i "s#restore-user-config = .*#restore-user-config = ${CURRENT_RESTORE_USER_CONFIG}#" ${CONFIG_DIR}/exodia.conf
-	sed -i "s#exodia-assistant-auto-start = .*#exodia-assistant-auto-start = ${CURRENT_AUTO_START_ASSISTANT_STATUS}#" ${CONFIG_DIR}/exodia.conf
-
-}
-
 MSG() {
 
 	echo -e ${Green}"\n[*] DWM is ${1}. Make sure your system locale is in ${BRed}UTF-8 format${Green}, ${BRed}Otherwise you won't be able to login into DWM." ${RESET_COLOR}
@@ -84,8 +59,27 @@ post_install() {
 
 		then
 
-			RESTORE_USER_CONFIG
-		
+			echo -e ${BBlue}"   ==> ${BPurple}restore user config for ${BCyan}exodia.conf ${BPurple}." ${RESET_COLOR}
+
+			sed -i "s#background = .*#background = ${CURRENT_BACKGROUND}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#theme = .*#theme = ${CURRENT_THEME}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#icons = .*#icons = ${CURRENT_ICONS}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#cursor = .*#cursor = ${CURRENT_CURSOR}#" ${CONFIG_DIR}/exodia.conf
+
+			sed -i "s#picom = .*#picom = ${CURRENT_PICOM}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#keyboard-layouts = .*#keyboard-layouts = ${CURRENT_KEYBOARD_LAYOUTS}#" ${CONFIG_DIR}/exodia.conf
+			
+			sed -i "s#RGB-keyboard = .*#RGB-keyboard = ${CURRENT_RGB_KEYBOARD}#" ${CONFIG_DIR}/exodia.conf
+			
+			
+			sed -i "s#github-username = .*#github-username = ${CURRENT_GITHUB_USERNAME}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#github-access-token = .*#github-access-token = ${CURRENT_GITHUB_ACCESS_TOKEN}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#weather-API = .*#weather-API = ${CURRENT_WEATHER_API_KEY}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#weather-city-ID = .*#weather-city-ID = ${CURRENT_WEATHER_CITY_ID}#" ${CONFIG_DIR}/exodia.conf
+			
+			sed -i "s#restore-user-config = .*#restore-user-config = ${CURRENT_RESTORE_USER_CONFIG}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#exodia-assistant-auto-start = .*#exodia-assistant-auto-start = ${CURRENT_AUTO_START_ASSISTANT_STATUS}#" ${CONFIG_DIR}/exodia.conf
+				
 	fi
 
 	MSG 'installed'
@@ -98,8 +92,27 @@ post_upgrade() {
 
 		then
 
-			RESTORE_USER_CONFIG
-		
+			echo -e ${BBlue}"   ==> ${BPurple}restore user config for ${BCyan}exodia.conf ${BPurple}." ${RESET_COLOR}
+
+			sed -i "s#background = .*#background = ${CURRENT_BACKGROUND}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#theme = .*#theme = ${CURRENT_THEME}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#icons = .*#icons = ${CURRENT_ICONS}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#cursor = .*#cursor = ${CURRENT_CURSOR}#" ${CONFIG_DIR}/exodia.conf
+
+			sed -i "s#picom = .*#picom = ${CURRENT_PICOM}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#keyboard-layouts = .*#keyboard-layouts = ${CURRENT_KEYBOARD_LAYOUTS}#" ${CONFIG_DIR}/exodia.conf
+			
+			sed -i "s#RGB-keyboard = .*#RGB-keyboard = ${CURRENT_RGB_KEYBOARD}#" ${CONFIG_DIR}/exodia.conf
+			
+			
+			sed -i "s#github-username = .*#github-username = ${CURRENT_GITHUB_USERNAME}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#github-access-token = .*#github-access-token = ${CURRENT_GITHUB_ACCESS_TOKEN}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#weather-API = .*#weather-API = ${CURRENT_WEATHER_API_KEY}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#weather-city-ID = .*#weather-city-ID = ${CURRENT_WEATHER_CITY_ID}#" ${CONFIG_DIR}/exodia.conf
+			
+			sed -i "s#restore-user-config = .*#restore-user-config = ${CURRENT_RESTORE_USER_CONFIG}#" ${CONFIG_DIR}/exodia.conf
+			sed -i "s#exodia-assistant-auto-start = .*#exodia-assistant-auto-start = ${CURRENT_AUTO_START_ASSISTANT_STATUS}#" ${CONFIG_DIR}/exodia.conf
+				
 	fi
 
 	MSG 'updated'

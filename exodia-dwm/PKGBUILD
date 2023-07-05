@@ -10,7 +10,6 @@ url="https://github.com/Exodia-OS/exodia-DWM"
 arch=('any')
 license=('GPL3')
 options=('zipman')
-conflicts=('exodia-dwm-predator')
 depends=(
   
   'libx11' 'libxinerama' 'libxft' 'freetype2' 
@@ -23,7 +22,7 @@ depends=(
 
 )
 
-conflicts=('dwm' 'exodia-dwm-beta')
+conflicts=('dwm' 'exodia-dwm-beta' 'exodia-dwm-predator')
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 install="${pkgname}.install"
