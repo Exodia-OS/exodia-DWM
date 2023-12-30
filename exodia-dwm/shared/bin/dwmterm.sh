@@ -11,7 +11,7 @@
 
 ## launch alacritty with DWM config ##
 
-CONFIG="/usr/share/exodia/dwm/alacritty/alacritty.yml"
+CONFIG="/usr/share/exodia/dwm/alacritty/alacritty.toml"
 
 if [ "$1" == "--float" ];
 	

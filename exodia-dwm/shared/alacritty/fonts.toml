@@ -1,0 +1,23 @@
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS         #
+#                                   #
+#####################################
+
+[font]
+size = 11
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"

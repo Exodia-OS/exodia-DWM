@@ -1,0 +1,35 @@
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS         #
+#                                   #
+#####################################
+
+# Colors configuration #
+[colors.primary]
+background = '#1A1B26'
+foreground = '#D4BFFF'
+
+# Normal colors #
+[colors.normal]
+black   = '#393B54'
+red     = '#F88199'
+green   = '#A8D475'
+yellow  = '#E4B873'
+blue    = '#85ACF8'
+magenta = '#B699E9'
+cyan    = '#4DA7B4'
+white   = '#8387A3'
+
+# Bright colors #
+[colors.bright]
+black   = '#4D5575'
+red     = '#FF859D'
+green   = '#C1F487'
+yellow  = '#FFA86F'
+blue    = '#88AFFF'
+magenta = '#C3A4F8'
+cyan    = '#09C1DC'
+white   = '#B5B9D6'
