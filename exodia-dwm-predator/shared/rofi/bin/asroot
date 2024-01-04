@@ -13,7 +13,7 @@ vim=" Vim"
 
 # Variable passed to rofi
 options="$terminal\n$files\n$editor\n$clifm\n$vim"
-term='alacritty --class alacritty-float,alacritty-float --config-file /root/.config/alacritty/alacritty.yml'
+term='alacritty --class alacritty-float,alacritty-float --config-file /root/.config/alacritty/alacritty.toml'
 
 # Functions
 
