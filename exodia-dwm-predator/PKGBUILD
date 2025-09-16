@@ -3,7 +3,7 @@
 #
 
 pkgname=exodia-dwm-predator
-pkgver=1.2
+pkgver=1.3
 pkgrel=5
 pkgdesc="DWM for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-DWM"

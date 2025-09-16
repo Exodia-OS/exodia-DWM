@@ -7,8 +7,8 @@
 #                                   #
 #####################################
 
-import = ["/usr/share/exodia/dwm/alacritty/colors.toml", "/usr/share/exodia/dwm/alacritty/fonts.toml"]
-live_config_reload = true
+general.import = ["/usr/share/exodia/dwm/alacritty/colors.toml", "/usr/share/exodia/dwm/alacritty/fonts.toml"]
+general.live_config_reload = true
 # "window.opacity" = 0.95
 
 [cursor]
